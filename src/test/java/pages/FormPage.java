@@ -14,7 +14,19 @@ public class FormPage {
     ResultTable resultTable = new ResultTable();
 
     SelenideElement firstNameInput = $("[id=firstName]"),
-    lastNameInput = $("[id=lastName]");
+    lastNameInput = $("[id=lastName]"),
+    email = $("[id=userEmail]"),
+    phone = $("#userNumber"),
+    dob = $("#dateOfBirthInput"),
+    subj = $("#subjectsInput"),
+    file = $("#uploadPicture"),
+    address = $("#currentAddress"),
+    state = $("#react-select-3-input"),
+    city = $("#react-select-4-input"),
+    submit = $("[id=submit]");
+
+
+
 
     public FormPage openPage() {
         open("automation-practice-form/");
@@ -32,7 +44,7 @@ public class FormPage {
     }
 
     public FormPage setEmail(String value) {
-        $("[id=userEmail]").setValue(value);
+        email.setValue(value);
         return this;
     }
 
@@ -42,18 +54,18 @@ public class FormPage {
     }
 
     public FormPage setPhone(String value) {
-        $("#userNumber").setValue(value);
+        phone.setValue(value);
         return this;
     }
 
     public FormPage setDateOfBirth(String day, String month, String year) {
-        $("#dateOfBirthInput").click();
+        dob.click();
         calendar.setDate(day, month, year);
         return this;
     }
 
     public FormPage setSubjects(String symbol, String value) {
-        $("#subjectsInput").sendKeys(symbol);
+        subj.sendKeys(symbol);
         $(byText(value)).click();
         return this;
     }
@@ -64,27 +76,27 @@ public class FormPage {
     }
 
     public FormPage uploadFile(String value) {
-        $("#uploadPicture").uploadFromClasspath(value);
+        file.uploadFromClasspath(value);
         return this;
     }
 
     public FormPage setAddress(String value) {
-        $("#currentAddress").setValue(value);
+        address.setValue(value);
       return this;
     }
 
     public FormPage setState(String value) {
-        $("#react-select-3-input").setValue(value).pressEnter();
+        state.setValue(value).pressEnter();
         return this;
     }
 
     public FormPage setCity(String value) {
-        $("#react-select-4-input").setValue(value).pressEnter();
+        city.setValue(value).pressEnter();
         return this;
     }
 
     public FormPage clickSubmit() {
-        $("[id=submit]").click();
+        submit.click();
         return this;
     }
 

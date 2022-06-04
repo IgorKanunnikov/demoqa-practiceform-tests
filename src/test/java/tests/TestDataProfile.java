@@ -1,20 +1,25 @@
 package tests;
 
-public class TestDataProfile {
+import com.github.javafaker.Faker;
+import utils.RandomGenerator;
 
-    String firstName = "John",
-            lastName = "Jumbo",
-            email = "jjoff@testmail.io",
-            gender = "Male",
-            phone = "7000952953",
-            day = "11",
-            month = "August",
-            year = "1990",
+import java.util.Locale;
+
+public class TestDataProfile {
+    Faker faker = new Faker(new Locale("en"));
+    String firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            email = faker.internet().emailAddress(),
+            gender = RandomGenerator.randomGender(),
+            phone = String.valueOf(faker.number().randomNumber(10, true)),
+            day = String.valueOf(faker.number().numberBetween(1, 28)),
+            month = RandomGenerator.randomMonth(),
+            year = String.valueOf(faker.number().numberBetween(1925, 2022)),
             subShort = "E",
             subFull = "English",
             hobbies = "Music",
             file = "orig.jpg",
-            address = "New-York 1/10",
+            address = faker.address().fullAddress(),
             state = "Rajasthan",
             city = "Jaipur";
 }
