@@ -25,9 +25,6 @@ public class FormPage {
     city = $("#react-select-4-input"),
     submit = $("[id=submit]");
 
-
-
-
     public FormPage openPage() {
         open("automation-practice-form/");
         return this;

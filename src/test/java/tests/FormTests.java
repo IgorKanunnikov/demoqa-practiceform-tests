@@ -3,12 +3,8 @@ package tests;
 import org.junit.jupiter.api.Test;
 
 public class FormTests extends TestBase {
-
-
-
     @Test
     void successfulTest() {
-
         formPage.openPage()
                 .setFirstName(testDataProfile.firstName)
                 .setLastName(testDataProfile.lastName)
@@ -22,9 +18,7 @@ public class FormTests extends TestBase {
                 .setAddress(testDataProfile.address)
                 .setState(testDataProfile.state)
                 .setCity(testDataProfile.city)
-
                 .clickSubmit()
-
                 .checkResult("Student Name", testDataProfile.firstName + " " + testDataProfile.lastName)
                 .checkResult("Student Email", testDataProfile.email)
                 .checkResult("Gender", testDataProfile.gender)
@@ -35,7 +29,6 @@ public class FormTests extends TestBase {
                 .checkResult("Picture", testDataProfile.file)
                 .checkResult("Address", testDataProfile.address)
                 .checkResult("State and City", testDataProfile.state + " " + testDataProfile.city);
-
     }
 }
 
