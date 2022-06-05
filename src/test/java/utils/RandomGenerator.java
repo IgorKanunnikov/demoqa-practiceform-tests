@@ -11,10 +11,10 @@ public class RandomGenerator {
     }
 
     public static String randomMonth() {
-        String[] gender = {"January", "February", "March", "April", "May", "June",
+        String[] month = {"January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"};
         Random random = new Random();
-        String randomM = gender[random.nextInt(gender.length)];
-        return randomM;
+        String randomMonths = month[random.nextInt(month.length)];
+        return randomMonths;
     }
 }
